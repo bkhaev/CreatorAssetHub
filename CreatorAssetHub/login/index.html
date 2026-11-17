@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Asset Hub</title>
+    <link rel="icon" type="image/png" href="favicon/favicon.png" sizes="16x16"/>
+    <link rel="stylesheet" href="https://use.typekit.net/aar7yxx.css">
+    <link rel="stylesheet" type="text/css" href="css/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="login/page.css">
+    <script src="login/local.js" type="module" defer></script>
+</head>
+<body class="spectrum">
+    <div id="preloaderArea" class="modal s-overlay">
+        <div id="globalPreloaderModal" class="_wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="70" height="70">
+                <path fill="currentColor" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+                </path>
+            </svg>
+        </div>
+    </div>
+    <div id="app" class="wrapper spectrum">
+        <div class="_context-header">
+            <div class="_wrapper">
+                <figure class="__greeting">
+                    <blockquote class="__greeting_main">
+                        <img src="images/logo/bflogobeta.svg" alt="logo" width="80" height="60">
+                        Creator Asset Hub —
+                    </blockquote>
+                    <figcaption>твой необходимый инструментарий</figcaption>
+                    <!-- <figcaption style="color: #B71C1C;">необходимо авторизоваться</figcaption> -->
+                </figure>
+            </div>
+        </div>
+        <ul class="_background-copyright">
+            <li>
+                <a href="#" title="Перейти к источнику🡭">
+                    <img src="images/icons/social/instagram.com.svg" alt="Instagram" width="30" height="30">
+                    <h4>Фотограф: Алексей Ященко</h4>
+                </a>
+            </li>
+        </ul>
+        <div class="_wrapper spectrum">
+            <main>
+                <section class="section-panel local-card">
+                    <header>
+                        <h1>Вход</h1>
+                    </header>
+                    <div class="_wrapper">
+                        <p>Нет учётной записи? <a class="cardSwitcher" href="#signup">Создать учётную запись</a></p>
+                        <form id="Form" class="local-card_form" novalidate autocomplete="off">
+                            <p id="logCommonStatus" class="__input-box_status"></p>
+                            <div id="logEmailBox" class="__input-box">
+                                <bf-input-text-grand>
+                                    <div class="_input-text s-primary-input">
+                                        <input id="logEmailInp" type="email" minlength="8" placeholder="Адрес электронной почты" autofocus required>
+                                    </div>
+                                </bf-input-text-grand>
+                                <p id="logEmailStatus" class="__input-box_status"></p>
+                            </div>
+                            <div id="regNameBox" class="__input-box" style="display: none;">
+                                <bf-input-text-grand>
+                                    <div class="_input-text s-primary-input">
+                                        <input id="regNameInp" type="text" placeholder="Псевдоним" autocomplete="off">
+                                    </div>
+                                </bf-input-text-grand>
+                                <p id="regNameStatus" class="__input-box_status"></p>
+                            </div>
+                            <div id="logPasswordBox" class="__input-box">
+                                <bf-input-text-grand>
+                                    <div class="_input-text s-primary-input">
+                                        <input id="logPasswordInp" type="password" placeholder="Пароль" required>
+                                    </div>
+                                </bf-input-text-grand>
+                                <p id="logPasswordStatus" class="__input-box_status"></p>
+                            </div>
+                            <button type="submit" class="btn" disabled>Готово</button>
+                        </form>
+                    </div>
+                    <footer>
+                        <ul>
+                            <li><a class="cardSwitcher" href="#resetPassword">Восстановить пароль</a></li>
+                        </ul>
+                    </footer>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

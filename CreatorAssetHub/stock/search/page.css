@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+
+/* ⎾¯¯¯¯¯ banner */
+
+#banner {
+    border-bottom: 1px solid var(--BorderColorMinor, lightgray);
+}
+
+#banner h3 {
+    margin-left: 1rem !important;
+}
+
+/* ⎿ˍˍˍˍˍ banner */
+
+
+
+body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    /* height: 100%; */
+}
+
+.wrapper > ._wrapper {
+    position: relative;
+    flex: auto;
+    width: 0;
+}
+
+/* Если скролбар убрать, то JS неверно считает при updateSearchResultView(). Это временное решение */
+.wrapper > ._wrapper > .__wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden scroll;
+}
+
+.wrapper > ._wrapper > .__wrapper > main {
+    display: flex;
+    padding: 1rem 2rem;
+}
+.wrapper > ._wrapper > .__wrapper > main > .__wrapper {
+    /* flex: 0 1 1600px; */
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1600px;
+}
+
+.wrapper > aside {
+    width: 17em;
+    flex: 0 0 auto;
+    min-width: 200px;
+    background-color: var(--BodyBgMinor, white);
+    padding: 1rem;
+    border-right: 1px solid var(--BorderColorMinor, lightgray);
+}
+
+
+
+/* ⎾¯¯¯¯¯ materialsSearchForm */
+
+#materialsSearchForm > div.s-hidden {
+    display: none;
+}
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ frameResolutionInputBox */
+
+#iv_resolution_custom + label {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+#iv_resolution_custom + label::before {
+    pointer-events: all;
+}
+
+#ivMinWidthInp, #ivMinHeightInp {
+    width: 3.7em;
+    text-align: center;
+}
+
+#iv_resolution_custom + label bf-input-text-grand {
+    display: contents;
+}
+
+#iv_resolution_custom + label bf-input-text-grand input {
+    pointer-events: all;
+}
+
+#iv_resolution_custom + label bf-input-text-grand ._input-text {
+    gap: 0;
+    padding: .3rem;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ frameResolutionInputBox */
+
+
+#materialsSearchForm details summary {
+    position: relative;
+    padding: .5em 0;
+}
+
+#materialsSearchForm details summary::before,
+#materialsSearchForm details summary::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: .5rem;
+    width: .5em;
+    height: .1em;
+    background-color: var(--BorderColorThird, gray);
+
+    -webkit-transition: transform var(--TransitionDurationGrand, 0s) ease-out;
+    -moz-transition: transform var(--TransitionDurationGrand, 0s) ease-out;
+    -o-transition: transform var(--TransitionDurationGrand, 0s) ease-out;
+    transition: transform var(--TransitionDurationGrand, 0s) ease-out;
+    -webkit-transform: translate(-.15em, -50%) rotate(45deg);
+    -moz-transform: translate(-.15em, -50%) rotate(45deg);
+    -ms-transform: translate(-.15em, -50%) rotate(45deg);
+    -o-transform: translate(-.15em, -50%) rotate(45deg);
+    transform: translate(-.15em, -50%) rotate(45deg);
+}
+#materialsSearchForm details summary::after {
+    -webkit-transform: translate(.15em, -50%) rotate(-45deg);
+    -moz-transform: translate(.15em, -50%) rotate(-45deg);
+    -ms-transform: translate(.15em, -50%) rotate(-45deg);
+    -o-transform: translate(.15em, -50%) rotate(-45deg);
+    transform: translate(.15em, -50%) rotate(-45deg);
+}
+#materialsSearchForm details[open] summary::before {
+    -webkit-transform: translate(-.15em, -50%) rotate(-45deg);
+    -moz-transform: translate(-.15em, -50%) rotate(-45deg);
+    -ms-transform: translate(-.15em, -50%) rotate(-45deg);
+    -o-transform: translate(-.15em, -50%) rotate(-45deg);
+    transform: translate(-.15em, -50%) rotate(-45deg);
+}
+#materialsSearchForm details[open] summary::after {
+    -webkit-transform: translate(.15em, -50%) rotate(45deg);
+    -moz-transform: translate(.15em, -50%) rotate(45deg);
+    -ms-transform: translate(.15em, -50%) rotate(45deg);
+    -o-transform: translate(.15em, -50%) rotate(45deg);
+    transform: translate(.15em, -50%) rotate(45deg);
+}
+
+#materialsSearchForm details summary h3 {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#materialsSearchForm ul li {
+    margin: .3em 0;
+}
+
+
+#materialsSearchForm .switch-input-minor > input[type="checkbox"] + label::before {
+	font-size: 1.1em;
+}
+
+#materialsSearchForm .switch-input-minor > input[type="radio"] + label::before {
+	font-size: 1.1em;
+}
+
+/* ⎿ˍˍˍˍˍ materialsSearchForm */
+
+
+
+/* ⎾¯¯¯¯¯ searchControlsPanel */
+
+#searchControlsPanel > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#searchControlsPanel #searchAppliedOptions {
+    font-size: .9em;
+}
+
+#searchControlsPanel #searchTotalCount {
+    margin: 1.5rem 0;
+    font-size: 1.2em;
+}
+
+/* ⎿ˍˍˍˍˍ searchControlsPanel */
+
+
+
+/* ⎾¯¯¯¯¯ searchControlsPanel */
+
+#searchResults {
+    --spaceBetween: .6rem; /* FOR JAVASCRIPT */
+}
+
+#searchResults > ._wrapper:not(:first-child) {
+    height: 0;
+    visibility: hidden;
+}
+
+#searchResults > ._wrapper > ._row {
+    display: flex;
+    height: 14em;
+    margin-bottom: var(--spaceBetween);
+    gap: var(--spaceBetween);
+    /* overflow: hidden; */
+}
+
+#searchResults bf-material-item {
+    max-width: unset;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+/* ⎿ˍˍˍˍˍ searchControlsPanel */
+
+
+#searchPagination ul {
+    justify-content: center;
+}

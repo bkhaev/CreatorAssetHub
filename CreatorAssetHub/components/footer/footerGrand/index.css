@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.footer-grand {
+	margin-top: 3rem;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+}
+
+.footer-grand ._copyright {
+	padding: 1.2em 0 1em 0;
+}
+
+.footer-grand > div {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	min-width: 60em;
+	width: 60%;
+	gap: 1rem;
+	margin: auto;
+}
+
+.footer-grand p {
+	margin-bottom: 1em;
+}
+
+.footer-grand ul li {
+	padding-bottom: 7px;
+}
+
+.footer-grand ul li a:hover {
+	text-decoration: underline;
+}
+
+
+
+.footer-grand.spectrum {
+	background-color: var(--BodyBgThird, lightgray);
+	border-top: 1px solid var(--BorderColorMinor, lightgray);
+	/* font-size: .9em; */
+}
+.footer-grand p.spectrum {
+	font-weight: bold;
+}
+/* span дописывать обязателно, иначе конфликтует с .footer-grand > div min-width: 60em; */
+.footer-grand ._copyright.spectrum span {
+	color: var(--FontClrMinor, gray);
+	font-size: .9em;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Phrases</title>
+    <link rel="icon" type="image/png" href="../favicon/favicon.png" sizes="16x16"/>
+    <link rel="stylesheet" href="https://use.typekit.net/aar7yxx.css">
+    <link rel="stylesheet" type="text/css" href="../css/destyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="search/page.css">
+    <script src="search/local.js" type="module" defer></script>
+</head>
+<body class="spectrum s-main-filled">
+    <header>
+        <nav id="globalnav" class="header-nav-grand" is="bf-header-grand"></nav>
+    </header>
+    <div id="banner" role="banner">
+        <div class="banner_row">
+            <div class="banner_column">
+                <div class="banner_column_wrapper page-greeting">
+                    <h2 class="spectrum-introductory-text">Поиск фраз</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalArea" class="modal s-overlay s-hidden">
+    </div>
+    <div id="preloaderArea" class="modal s-hidden">
+        <div id="globalPreloaderModal" class="_wrapper s-hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="70" height="70">
+                <path fill="currentColor" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+                </path>
+            </svg>
+        </div>
+    </div>
+    <main class="_main">
+        <div class="_wrapper">
+            <section id="searchControlBlock" class="section-panel">
+                <form id="searchForm">
+                    <div>
+                        <!-- <bf-input-text-grand elements="{&quot;elements&quot;:[&quot;search&quot;,&quot;btn&quot;]}"></bf-input-text-grand> -->
+                        <bf-input-text-grand>
+                            <div class="_input-text _btn s-primary-input">
+                                <input id="searchInput" type="search" autocomplete="off" placeholder="Поиск по фразе" title="Введите ключевые слова">
+                                <button type="submit">
+                                    <img src="../images/icons/dark/40pt/magnifier.png" srcset="../images/icons/dark/40pt/magnifier.svg" alt="🔍" width="20" height="20">
+                                </button>
+                            </div>
+                        </bf-input-text-grand>
+                        <button id="searchFiltersMenu" type="button" class="btn">Фильтры</button>
+                    </div>
+                    <div>
+                        <ul id="searchAppliedOptions" class="spectrum" is="bf-tag-list"></ul>
+                    </div>
+                    <div>
+                        <div>
+                            <bf-pagination-grand id="searchPagination"></bf-pagination-grand>
+                            <p id="searchPaginationResult">Всего найдено фраз: <span>232</span></p>
+                        </div>
+                        <div id="searchSortMenu" class="menu-btn-grand">
+                            <label for="searchSortMenuBtn">Сортировка:</label>
+                            <button id="searchSortMenuBtn" type="button" class="_btn">
+                                <span class="semantic-hidden">Sort Menu</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.47 152.34"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M18.78,119.88v-5q0-54.56,0-109.11C18.79.42,19.2,0,24.6,0H34.72c5.33,0,5.81.48,5.81,5.74q0,54.55,0,109.11v5c4.88,0,9.59-.14,14.28.08,1.52.07,3.88.21,4.51,1.7s-.84,3.15-1.83,4.16c-8.13,8.31-16.44,16.44-24.58,24.74-2.4,2.45-4.21,2.31-6.54-.07-8.23-8.38-16.62-16.61-24.85-25-.89-.91-1.83-2.86-1.42-3.69.47-1,2.35-1.78,3.66-1.83C8.6,119.76,13.46,119.88,18.78,119.88Z"/><path d="M111.42,43.41c-11.11,0-22.23,0-33.34,0-4.3,0-5-.7-5-5,0-4.12.06-8.24,0-12.36C73,23,74.3,21.41,77.45,21.41q33.9,0,67.79,0c2.9,0,4.31,1.31,4.21,4.38-.15,4.36-.19,8.74,0,13.1.16,3.53-1.44,4.57-4.71,4.54C133.64,43.35,122.53,43.41,111.42,43.41Z"/><path d="M102.9,87.23c-8.24,0-16.49,0-24.73,0-4.39,0-5.07-.66-5.12-4.91s0-8.5,0-12.74c0-2.76,1.2-4.12,4.07-4.11q26.06.06,52.09,0c2.94,0,3.94,1.41,3.87,4.19-.1,4.49-.14,9,0,13.48.11,3.19-1.39,4.14-4.31,4.11C120.14,87.18,111.52,87.23,102.9,87.23Z"/><path d="M87.14,109.29c3.24,0,6.48,0,9.73,0,2.47,0,3.67,1.15,3.66,3.63,0,4.87,0,9.74,0,14.6,0,2.53-1.39,3.7-3.7,3.72-6.61.07-13.23,0-19.84,0-2.61,0-3.91-1.43-3.93-4q-.06-7.11,0-14.22c0-2.58,1.32-3.86,4-3.81C80.4,109.34,83.77,109.29,87.14,109.29Z"/></g></g></svg>
+                            </button>
+                            <div class="_menu">
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="searchSort1" name="search-sort" value="latest" checked>
+                                        <label class="li_content" for="searchSort1"><span>По последним</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="searchSort2" name="search-sort" value="views">
+                                        <label class="li_content" for="searchSort2"><span>По просмотрам</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="searchSort3" name="search-sort" value="saved">
+                                        <label class="li_content" for="searchSort3"><span>По сохранённым</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="searchSort4" name="search-sort" value="approved">
+                                        <label class="li_content" for="searchSort4"><span>По проверенным</span></label>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="searchDirection1" name="search-direction" value="asc">
+                                        <label class="li_content" for="searchDirection1"><span>По возрастанию</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="searchDirection2" name="search-direction" value="desc" checked>
+                                        <label class="li_content" for="searchDirection2"><span>По убыванию</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <input value="" class="tel"> -->
+                </form>
+            </section>
+            <section id="searchResults"></section>
+            <section id="searchControlBlockBottom" class="section-panel">
+                <div>
+                    <p id="searchPaginationBottomResult">Всего найдено фраз: <span>232</span></p>
+                </div>
+                <div>
+                    <bf-pagination-grand id="searchPaginationBottom"></bf-pagination-grand>
+                </div>
+            </section>
+            <p class="spectrum-heading-text"><a href="http://localhost/phrases/addphrase">Добавить фразу</p>
+        </div>
+    </main>
+    <footer is="bf-footer-grand"></footer>
+</body>
+</html>

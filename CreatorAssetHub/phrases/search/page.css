@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+
+main {
+    display: flex;
+}
+
+/* flex вместо max-width, так как если контент меньше, чем --ContainerWidthGrand, то он будет прям посередине страницы */
+main ._wrapper {
+    /* max-width: 1000px; */
+    flex: 0 1 var(--ContainerWidthGrand);
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+
+/* ⎾¯¯¯¯¯ searchControlBlock */
+
+#searchControlBlock form > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.5rem 0 .5rem 0;
+}
+#searchControlBlock form > div > div {
+    --spaceBetween: .5em;
+    display: flex;
+    gap: var(--spaceBetween);
+    align-items: center;
+}
+
+#searchControlBlock bf-input-text-grand {
+    flex: auto;
+}
+
+#searchControlBlock form > div > div:first-child > *:not(:first-child)::before {
+    content: '•';
+    margin-right: var(--spaceBetween);
+}
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ searchFiltersMenu */
+
+#searchFiltersMenu {
+    position: relative;
+}
+#searchFiltersMenu::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    background: orange;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%) scale(0);
+    box-shadow: var(--MenuBoxShadow);
+    
+    -webkit-transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    -moz-transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    -o-transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+}
+#searchFiltersMenu.s-changed::after {
+    transform: translate(30%, -30%);
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ searchFiltersMenu */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ searchAppliedOptions */
+
+#searchAppliedOptions.spectrum {
+    font-size: .9em;
+    font-weight: 300;
+}
+
+#searchAppliedOptions.spectrum ._content span {
+    margin-top: -2px;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ searchAppliedOptions */
+
+
+/* ⎿ˍˍˍˍˍ searchControlBlock */
+
+
+
+/* ⎾¯¯¯¯¯ searchControlBlockBottom */
+
+#searchControlBlockBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#searchControlBlockBottom.s-hidden {
+    display: none;
+}
+
+/* ⎿ˍˍˍˍˍ searchControlBlockBottom */
+
+
+
+/* ⎾¯¯¯¯¯ bf-phrase-item */
+
+#searchResults {
+    display: contents;
+}
+
+#searchResults > bf-phrase-item {
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 40em;
+}
+
+#searchResults > h3 {
+    margin: 1em;
+}
+
+/* ⎿ˍˍˍˍˍ bf-phrase-item */
+
+
+
+/* ⎾¯¯¯¯¯ menu-btn-grand */
+
+#searchSortMenu ._menu {
+    width: 10.3em;
+    top: 100%;
+    right: 0;
+}
+
+#searchSortMenu.s-expanded ._menu {
+	transform: translateY(.3rem);
+}
+
+/* ⎿ˍˍˍˍˍ menu-btn-grand */

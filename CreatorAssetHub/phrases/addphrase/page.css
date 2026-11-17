@@ -1,0 +1,404 @@
+@charset "utf-8";
+
+.local-heading-text {
+	display: block;
+	margin-bottom: .3em;
+}
+
+.local-author-heading {
+    margin: 0;
+}
+
+.local-modal-heading {
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    /* font-weight: bold; */
+}
+
+.local-modal-paragraph {
+    font-size: 1.1em;
+    margin-bottom: .3em;
+}
+
+.local-modal-separator {
+    border-bottom: 1px solid var(--BorderColorMinor, lightgray);
+}
+
+
+main {
+    display: flex;
+}
+
+main ._wrapper {
+    /* max-width: 1000px; */
+    flex: 0 1 var(--ContainerWidthGrand);
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+main ._wrapper > section > h2,
+main ._wrapper > section > section > h2 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    /* margin-bottom: .75em; */
+}
+
+
+
+/* ⎾¯¯¯¯¯ dataFormBlock */
+
+#dataFormBlock > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#dataFormBlock > form > div {
+    display: flex;
+}
+
+#dataFormBlock > form > div > div:first-child,
+#dataFormBlock > form > div > div.s-full-container {
+    flex: 1 1 auto !important;
+    align-items: stretch !important;
+    width: 100%;
+}
+#dataFormBlock > form > div > div:last-child {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#dataFormBlock > form > div > div:not(:first-child) {
+    margin-left: 1rem;
+}
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseInputBox */
+
+#dataFormBlock #phraseInputBox {
+    height: 7em;
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseInputBox.s-invalid {
+    border-color: var(--WarningBorderClr, red);
+    caret-color: var(--WarningBorderClrHover, darkred);
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseInputBox.s-invalid:hover,
+#dataFormBlock #newPhraseForm[data-validate] #phraseInputBox.s-invalid:focus-within {
+    border-color: var(--WarningBorderClrHover, darkred);
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseInputBox */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseTagsInputBox */
+
+#dataFormBlock #phraseTagsInputBox {
+    min-height: 7em;
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseTagsInputBox.s-invalid {
+    border-color: var(--WarningBorderClr, red);
+    caret-color: var(--WarningBorderClrHover, darkred);
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseTagsInputBox.s-invalid:hover,
+#dataFormBlock #newPhraseForm[data-validate] #phraseTagsInputBox.s-invalid:focus-within {
+    border-color: var(--WarningBorderClrHover, darkred);
+}
+
+#phraseTagsInputBox #phraseTagsOpenTagsMenu:checked + label svg .cls-2 {
+    stroke: var(--AccentBgGrand);
+}
+
+#phraseTagsInputBox #tagsInput.s-tag {
+    color: #1E88E5;
+    caret-color: #1E88E5;
+}
+
+#phraseTagsInputBox #tagsInput.s-tag + datalist {
+    display: block;
+}
+
+#phraseTagsInputBox > ._text-area > input + datalist option.s-tag::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 243.79 243.79'%3E%3Cdefs%3E%3Cstyle%3E.cls-1,.cls-2%7Bfill:none;%7D.cls-1%7Bopacity:0.5;%7D.cls-2%7Bstroke:%231E88E5;stroke-linecap:round;stroke-miterlimit:10;stroke-width:30px;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cg id='hashtag_icon'%3E%3Crect id='rectangle' class='cls-1' width='243.79' height='243.79'/%3E%3Cline class='cls-2' x1='81.52' y1='16.57' x2='81.52' y2='227.22'/%3E%3Cline class='cls-2' x1='161.77' y1='16.57' x2='161.77' y2='227.22'/%3E%3Cline class='cls-2' x1='213.79' y1='88.02' x2='30' y2='88.02'/%3E%3Cline class='cls-2' x1='213.79' y1='155.76' x2='30' y2='155.76'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseTagsInputBox */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseFeaturedAuthors */
+
+#dataFormBlock #phraseFeaturedAuthors {
+    margin-bottom: 1rem;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseFeaturedAuthors */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseAppliedAuthors */
+
+#dataFormBlock #phraseAppliedAuthors {
+    margin-bottom: 1rem;
+    font-size: .9em;
+    font-weight: 300;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseAppliedAuthors */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseAuthorsInput */
+
+#dataFormBlock #phraseAuthorsControl {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#dataFormBlock #phraseAuthorsInputBlock {
+    position: relative;
+    width: 20em;
+}
+
+#dataFormBlock #phraseAuthorsInputBox {
+    width: 100%;
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseAuthorsInputBlock.s-invalid #phraseAuthorsInputBox {
+    border-color: var(--WarningBorderClr, red);
+    caret-color: var(--WarningBorderClrHover, darkred);
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseAuthorsInputBlock.s-invalid:hover #phraseAuthorsInputBox,
+#dataFormBlock #newPhraseForm[data-validate] #phraseAuthorsInputBlock.s-invalid:focus-within #phraseAuthorsInputBox {
+    border-color: var(--WarningBorderClrHover, darkred);
+}
+
+#dataFormBlock #authorsList {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+    margin: 0 .3rem;
+    background-color: var(--BodyBgMinor, white);
+    border: 1px solid var(--InpTextGrandBorderClrHover, lightgray);
+    border-radius: 0 0 .3rem .3rem;
+    border-top: none;
+    overflow: hidden;
+    box-shadow: 0 1px 4px var(--MenuBoxShadowClr);
+    -webkit-transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    -moz-transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    -o-transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    transition: transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 130ms ease-in-out;
+    z-index: 100;
+}
+
+#dataFormBlock #authorsList > .user-view-card {
+	cursor: pointer;
+	width: 100%;
+}
+#dataFormBlock #authorsList > .user-view-card:hover {
+	background-color: var(--MenuOptionsBgHover, lightgray);
+}
+
+#dataFormBlock #authorsList > ._loading {
+	margin: 1rem;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseAuthorsInput */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseCamera */
+
+#dataFormBlock #phraseCamera {
+    margin-bottom: 1rem;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseCamera */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseEmotionMenu */
+
+#dataFormBlock #phraseEmotionMenu > ._menu {
+    width: 10.3em;
+    top: 100%;
+    right: 0;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseEmotionMenu */
+
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseToneList */
+
+#dataFormBlock #newPhraseForm[data-validate] #phraseToneList.s-invalid li input:not(:disabled) + .li_content {
+    border-color: var(--WarningBorderClr, red);
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseToneList.s-invalid li input:not(:disabled) + .li_content:hover {
+	border-color: var(--WarningBorderClrHover, darkred);
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseToneList.s-invalid li input:focus:not(:checked):not(:disabled) + .li_content:hover {
+    border-color: var(--WarningBorderClr07, red);
+}
+#dataFormBlock #newPhraseForm[data-validate] #phraseToneList.s-invalid li input:focus + .li_content {
+	box-shadow: var(--WarningBoxShadowGrandFocus);
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseToneList */
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phrasePreReadyControls */
+
+#phrasePreReadyControls {
+    flex-direction: row !important;
+    align-items: end !important;
+}
+
+#phrasePreReadyControls > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phrasePreReadyControls */
+
+
+/* ⎿ˍˍˍˍˍ dataFormBlock */
+
+
+
+/* ⎾¯¯¯¯¯ phraseSourcesBlock */
+
+#phraseSourcesBlock[data-validate].s-invalid {
+    border-color: var(--WarningBorderClr, red);
+}
+
+#phraseSourcesBlock > section > * {
+    margin-bottom: .75em;
+}
+
+#phraseSourcesBlock > section > div {
+    display: flex;
+}
+
+#phraseSourcesBlock > section > div > div {
+    width: 50%;
+}
+
+#phraseSourcesBlock > section > div > div:not(:first-child) {
+    margin-left: 1rem;
+}
+
+
+/*      ⎾¯¯¯¯¯¯¯¯¯¯ phraseSourcesList */
+
+#phraseSourcesList.s-hidden {
+    display: none;
+}
+
+/* #phraseSourcesList > h3 {
+    margin-bottom: .5em;
+} */
+
+#phraseSourcesList > ul li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: .5em 0;
+    gap: 2em;
+}
+
+#phraseSourcesList > ul li > div {
+    display: flex;
+    /* align-items: center; */
+    flex: 0 1 100%;
+}
+#phraseSourcesList > ul li > div:not(:last-child)::after {
+    content: '';
+    border-right: 1px solid var(--BorderColorGrand, lightgray);
+    margin-left: 2em;
+    vertical-align: middle;
+}
+#phraseSourcesList > ul li > div:last-child {
+    /* flex: 0 0 auto; */
+}
+
+#phraseSourcesList > ul li > div > span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    flex: 1 0 auto;
+}
+#phraseSourcesList > ul li > div.s-undefined > span {
+    color: var(--InpTextGrandBorderClrHover, gray);
+}
+
+#phraseSourcesList > ul li > div._url > span {
+    width: 20em;
+}
+
+#phraseSourcesList > ul li > div._title > span {
+    width: 13em;
+}
+
+#phraseSourcesList > ul li > div._time > span {
+    width: 7em;
+}
+
+#phraseSourcesList > ul li button[name="source-delete"] {
+    color: var(--WarningBorderClr, red);
+}
+#phraseSourcesList > ul li button[name="source-delete"]:hover {
+    color: var(--WarningBorderClrHover, darkred);
+}
+
+/*      ⎿ˍˍˍˍˍˍˍˍˍˍ phraseSourcesList */
+
+
+#phraseSourcesBlock #phraseSourseUrl {
+    width: 100%;
+}
+
+/* ⎿ˍˍˍˍˍ phraseSourcesBlock */
+
+
+
+/* ⎾¯¯¯¯¯ phraseAddResultModal */
+
+#phraseAddResultModal {
+    min-width: 500px;
+    padding: 1rem 2rem;
+}
+
+#phraseAddResultModal h3 {
+    text-align: center;
+}
+
+#phraseAddResultModal .local-modal-separator {
+    margin: .5rem -2rem;
+}
+
+#phraseAddResultModal .local_actions-list {
+    font-size: 1.1em;
+}
+
+#phraseAddResultModal .local_actions-list li > button,
+#phraseAddResultModal .local_actions-list li > a {
+    display: block;
+    width: 100%;
+    padding: .3em 0em;
+    color: var(--TextBtnFontClrGrand, lightblue);
+}
+#phraseAddResultModal .local_actions-list li > button:hover,
+#phraseAddResultModal .local_actions-list li > a:hover {
+    color: var(--TextBtnFontClrGrandHover, lightblue);
+}
+
+#phraseAddResultModal #phraseNewKeyCode span {
+    color: var(--WarningFontClr);
+}
+
+/* ⎿ˍˍˍˍˍ phraseAddResultModal */

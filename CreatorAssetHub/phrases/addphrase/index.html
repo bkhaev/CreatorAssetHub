@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Phrase</title>
+    <link rel="icon" type="image/png" href="../favicon/favicon.png" sizes="16x16"/>
+    <link rel="stylesheet" href="https://use.typekit.net/aar7yxx.css">
+    <link rel="stylesheet" type="text/css" href="../css/destyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="addphrase/page.css">
+    <script src="../js/vendor/imask.js" type="text/javascript" defer></script>
+    <script src="addphrase/local.js" type="module" defer></script>
+</head>
+<body class="spectrum s-main-filled">
+    <header>
+        <nav id="globalnav" class="header-nav-grand" is="bf-header-grand"></nav>
+    </header>
+    <div id="modalArea" class="modal s-overlay s-hidden">
+        <div id="phraseAddResultModal" class="_wrapper">
+            <h3 class="local-modal-heading spectrum-introductory-text">Фраза успешно добавлена!</h3>
+            <p id="phraseNewKeyCode" class="local-modal-paragraph spectrum-paragraph-text">Ключ редактирования: </p>
+            <p class="local-modal-paragraph spectrum-paragraph-text">Доступные действия:</p>
+            <div class="local-modal-separator"></div>
+            <ul class="local_actions-list">
+                <li><a id="phraseNewDetailsLink" href="#">Перейти на страницу фразы</a></li>
+                <li><a id="phrasesSearchLink" href="http://localhost/phrases/search">Поиск фраз</a></li>
+                <li><button id="phraseAddResultModalCloseBtn" type="button">Добавить ещё</button></li>
+            </ul>
+        </div>
+    </div>
+    <div id="preloaderArea" class="modal s-hidden">
+        <div id="globalPreloaderModal" class="_wrapper s-hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="70" height="70">
+                <path fill="currentColor" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+                </path>
+            </svg>
+        </div>
+    </div>
+    <main class="_main">
+        <div class="_wrapper">
+            <nav class="location-navigation-grand spectrum-heading-text">
+                <ul>
+                    <li><a href="http://localhost/phrases/search">Главная</a></li>
+                    <li><a href="http://localhost/phrases/search">Фразы</a></li>
+                    <li>Добавить фразу</li>
+                </ul>
+            </nav>
+            <section id="dataFormBlock" class="section-panel">
+                <form id="newPhraseForm">
+                    <div>
+                        <div>
+                            <label for="phraseInput" class="spectrum-heading-text local-heading-text">Введите фразу</label>
+                            <div id="phraseInputBox" class="multiple-input-text-grand">
+                                <textarea id="phraseInput" name="phrase" maxlength="200" autocomplete="off"></textarea>
+                                <span class="_symbols-count"><span>0</span>/200</span>
+                            </div>
+                        </div>
+                        <div class="s-full-container">
+                            <label for="tagsInput" class="spectrum-heading-text local-heading-text">Добавьте синонимы и теги</label>
+                            <div id="phraseTagsInputBox" class="multiple-input-tags-grand">
+                                <div class="_tools-bar">
+                                    <input id="phraseTagsOpenTagsMenu" type="checkbox" title="Режим тегов">
+                                    <label for="phraseTagsOpenTagsMenu" class="__btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243.79 243.79"><defs><style>.cls-1,.cls-2{fill:none;}.cls-1{opacity:0.5;}.cls-2{stroke:#231f20;stroke-linecap:round;stroke-miterlimit:10;stroke-width:30px;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="hashtag_icon"><rect id="rectangle" class="cls-1" width="243.79" height="243.79"/><line class="cls-2" x1="81.52" y1="16.57" x2="81.52" y2="227.22"/><line class="cls-2" x1="161.77" y1="16.57" x2="161.77" y2="227.22"/><line class="cls-2" x1="213.79" y1="88.02" x2="30" y2="88.02"/><line class="cls-2" x1="213.79" y1="155.76" x2="30" y2="155.76"/></g></g></g></svg>
+                                    </label>
+                                </div>
+                                <div class="_text-area">
+                                    <input type="text" name="tags" id="tagsInput" list="" size="1" maxlength="80" autocomplete="off">
+                                </div>
+                                <span class="_symbols-count"><span>0</span>/300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3 class="spectrum-heading-text local-heading-text local-author-heading">Автор</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <ul id="phraseAppliedAuthors" class="spectrum" is="bf-tag-list"></ul>
+                            <div id="phraseAuthorsControl">
+                                <div id="phraseAuthorsInputBlock">
+                                    <bf-input-text-grand id="phraseAuthorsInputBox">
+                                        <div class="_input-text _btn s-primary-input">
+                                            <input id="authorInput" type="text" name="author" placeholder="Ввести самому" autocomplete="off">
+                                            <button id="authorInputBtn" type="button" name="author">
+                                                Добавить
+                                            </button>
+                                        </div>
+                                    </bf-input-text-grand>
+                                    <!-- <bf-users-data-list id="authorsList" role="listbox">
+                                        <div class="_loading">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="20" height="20" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                                <circle cx="50" cy="50" fill="none" stroke="rgba(112, 112, 112, 0.6)" stroke-width="20" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+                                                  <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/>
+                                                </circle>
+                                            </svg>
+                                        </div>
+                                        <button type="button" name="author" value="[скрыто]" class="user-view-card" role="option">
+                                            <div class="_picture spectrum skeleton">
+                                                <img src="../images/persons/1/[скрыто].jpg" width="50" height="50" alt="[скрыто]">
+                                            </div>
+                                            <div class="_text">
+                                                <div><h4>[скрыто]</h4></div>
+                                                <div><p>Летсплейщик, стример</p></div>
+                                            </div>
+                                        </button>
+                                    </bf-users-data-list> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="phraseCamera" class="switch-input-minor">
+                                <input type="checkbox" id="phrase_camera" name="camera" value="1" autocomplete="off" checked>
+                                <label for="phrase_camera"><span>Камера</span></label>
+                            </div>
+                            <div id="phraseEmotionMenu" class="menu-btn-grand">
+                                <label for="phraseEmotionMenuBtn" class="spectrum-heading-text">Эмоции: <span>нет</span></label>
+                                <button id="phraseEmotionMenuBtn" type="button" class="_btn">
+                                    <span class="semantic-hidden">Emotions Menu</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 125"><g><path d="M168.75,0H6.25a6.25,6.25,0,0,0,0,12.5h162.5a6.25,6.25,0,0,0,0-12.5Z"/></g><g><path d="M6.26,68.75H87.51a6.25,6.25,0,0,0,0-12.5H6.26a6.25,6.25,0,0,0,0,12.5Z"/></g><g><path d="M143.75,112.5H6.25a6.25,6.25,0,0,0,0,12.5h137.5a6.25,6.25,0,0,0,0-12.5Z"/></g></svg>
+                                </button>
+                                <div class="_menu">
+                                    <ul>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion0" name="emotion" value="нет" autocomplete="off" checked>
+                                            <label class="li_content" for="phraseEmotion0"><span>нет</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion1" name="emotion" value="удивление" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion1"><span>удивление</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion2" name="emotion" value="ор" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion2"><span>ор</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion3" name="emotion" value="насмешка" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion3"><span>насмешка</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion4" name="emotion" value="испуг" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion4"><span>испуг</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion5" name="emotion" value="прямо" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion5"><span>прямо</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion6" name="emotion" value="гневно" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion6"><span>гневно</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion7" name="emotion" value="радостно" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion7"><span>радостно</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="phraseEmotion8" name="emotion" value="отвращение" autocomplete="off">
+                                            <label class="li_content" for="phraseEmotion8"><span>отвращение</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3 class="spectrum-heading-text local-heading-text">Тон</h3>
+                            <ul id="phraseToneList" class="variative-list-grand">
+                                <li>
+                                    <input type="checkbox" id="phraseToneList_item_1" name="tone" value="low" autocomplete="off">
+                                    <label for="phraseToneList_item_1" class="li_content">низкий</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="phraseToneList_item_2" name="tone" value="medium" autocomplete="off" checked>
+                                    <label for="phraseToneList_item_2" class="li_content">средний</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="phraseToneList_item_3" name="tone" value="high" autocomplete="off">
+                                    <label for="phraseToneList_item_3" class="li_content">высокий</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="phrasePreReadyControls">
+                            <div>
+                                <button id="phraseSendBtn" type="submit" name="sendPhrase" class="btn">Готово</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="phraseSourcesBlock" class="section-panel">
+                <section>
+                    <h2>Добавьте внешние ссылки</h2>
+                    <div>
+                        <div>
+                            <label for="phraseSourceUrlInput" class="spectrum-heading-text local-heading-text">URL-источник</label>
+                            <bf-input-text-grand id="phraseSourseUrl">
+                                <div class="_input-text _btn s-primary-input">
+                                    <input id="phraseSourceUrlInput" type="url" name="sourse-url" placeholder="https://" autocomplete="off">
+                                </div>
+                            </bf-input-text-grand>
+                        </div>
+                        <div>
+                            <label for="phraseSourceTimeStartInput" class="spectrum-heading-text local-heading-text">Время начала</label>
+                            <bf-input-text-grand>
+                                <div class="_input-text _btn s-primary-input">
+                                    <input id="phraseSourceTimeStartInput" class="s-time" type="text" name="sourse-time-start" placeholder="__:__:__" autocomplete="off">
+                                </div>
+                            </bf-input-text-grand>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="phraseSourceTitleInput" class="spectrum-heading-text local-heading-text">Название</label>
+                            <div id="phraseSourceTitleInputBox" class="multiple-input-text-grand">
+                                <textarea id="phraseSourceTitleInput" name="sourse-title" rows="4" maxlength="100" autocomplete="off"></textarea>
+                                <span class="_symbols-count"><span>0</span>/100</span>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div>
+                            <button id="phraseSourceAddBtn" type="button" class="btn" disabled>Добавить</button>
+                        </div>
+                        <div></div>
+                    </div>
+                </section>
+                <div id="phraseSourcesList" class="s-hidden">
+                    <h3 class="spectrum-heading-text local-heading-text">Ссылки</h3>
+                    <ul></ul>
+                </div>
+                <p style="margin-top: 1rem;color: orange;">Поддерживаемые сайты: www.youtube.com, m.youtube.com, youtu.be, www.twitch.tv, trovo.live, t.me, vk.com, www.facebook.com, www.instagram.com, twitter.com</p>
+            </section>
+        </div>
+    </main>
+    <footer is="bf-footer-minor">
+        <div class="footer-minor">
+            <div>Политика конфиденциальности</div>
+            <div>Условия использования</div>
+        </div>
+    </footer>
+</body>
+</html>
